@@ -30,3 +30,12 @@ const context = require.context('./', true, /\.spec\.ts$/);
 context.keys().map(context);
 // Finally, start Karma to run the tests.
 __karma__.start();
+
+require([
+  'http://10.200.73.90:8080/pentaho/plugin/pentaho-cdf-dd/api/renderer/getDashboard?path=/public/plugin-samples/pentaho-cdf-dd/pentaho-cdf-dd-require/' + name
+], function(SampleDash) {
+
+  var sampleDash = new SampleDash("content1");
+  sampleDash.render();
+
+});

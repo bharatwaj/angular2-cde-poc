@@ -4,10 +4,13 @@
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "",
-    "types": []
+    "types": [],
+    //"allowJs": true,
+    "allowUnreachableCode": true
   },
   "exclude": [
-    "test.ts",
+    //"test.ts",
+    "app/log.js",
     "**/*.spec.ts"
   ]
 }
