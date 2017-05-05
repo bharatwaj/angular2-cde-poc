@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   constructor() {
-    dashboard.getChart('cde_sample1.wcdf');
+    const reportPath = '/public/plugin-samples/pentaho-cdf-dd/pentaho-cdf-dd-require/cde_sample1.wcdf';
+    window['require']([
+      `http://10.200.73.90:8080/pentaho/plugin/pentaho-cdf-dd/api/renderer/getDashboard?path=${reportPath}`
+    ], (SampleDash) => {
+
+      const sampleDash = new SampleDash('content1');
+      sampleDash.render();
+
+    });
   }
 }
